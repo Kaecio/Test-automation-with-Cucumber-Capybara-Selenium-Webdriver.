@@ -16,23 +16,31 @@ Funcionalidade: Cadastro
     @try_registration
     Cenario: Submeter cadastro sem o nome
         Dado que acesso a página de cadastro
-        Quando submeto o meu cadastro sem o nome
+         Quando submeto o seguinte formulario de cadastro:
+            |nome            |email              |senha|
+            |                |kaecio@yahoo.com.br| 123456|
         Então vejo a mensagem de alerta: "Oops. Informe seu nome completo!"
 
     @try_registration
     Cenario: Submeter cadastro sem o email
         Dado que acesso a página de cadastro
-        Quando submeto o meu cadastro sem o email
+         Quando submeto o seguinte formulario de cadastro:
+            |nome            |email              |senha|
+            |Fanderson kaecio|                   | 123456|
         Então vejo a mensagem de alerta: "Oops. Informe um email válido!"
 
     @try_registration
     Cenario: Submeter cadastro com email incorreto
         Dado que acesso a página de cadastro
-        Quando submeto o meu cadastro com email incorreto
+         Quando submeto o seguinte formulario de cadastro:
+            |nome            |email              |senha|
+            |Fanderson kaecio|kaecio$yahoo.com.br| 123456|
         Então vejo a mensagem de alerta: "Oops. Informe um email válido!"
 
     @try_registration
     Cenario: Submeter cadastro sem a senha
         Dado que acesso a página de cadastro
-        Quando submeto o meu cadastro sem a senha
+         Quando submeto o seguinte formulario de cadastro:
+            |nome            |email              |senha|
+            |Fanderson kaecio|kaecio@yahoo.com.br|      |
         Então vejo a mensagem de alerta: "Oops. Informe sua senha secreta!"
